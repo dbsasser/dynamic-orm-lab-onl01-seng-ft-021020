@@ -7,7 +7,7 @@ class InteractiveRecord
     self.to_s.downcase.pluralize
   end
 
-  def self.column_names 
+  def self.column_names
     DB[:conn].results_as_hash = true
     sql = "PRAGMA table_info('#{table_name}')"
     table_info = DB[:conn].execute(sql)
@@ -20,5 +20,5 @@ class InteractiveRecord
     column_names.compact
   end
 
-    
+
 end
